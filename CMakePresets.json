@@ -11,7 +11,7 @@
         "IVW_CFG_PROFILING":                { "type": "BOOL", "value": "ON"},
         "IVW_CFG_PRECOMPILED_HEADERS":      { "type": "BOOL", "value": "OFF"},
         "IVW_CFG_FORCE_ASSERTIONS":         { "type": "BOOL", "value": "ON"},
-        "IVW_CFG_BUILD_CHANGELOG":          { "type": "BOOL", "value": "ON"},
+        "IVW_CFG_BUILD_CHANGELOG":          { "type": "BOOL", "value": "OFF"},
 
         "IVW_APP_MINIMAL_GLFW":             { "type": "BOOL", "value": "ON"},
         "IVW_APP_MINIMAL_QT":               { "type": "BOOL", "value": "ON"},

@@ -3222,18 +3222,18 @@ sigar_tcp_get(sigar_t *sigar,
 }
 
 #ifndef SIGAR_FREEBSD5_NFSSTAT
-static int get_nfsstats(struct nfsstats *stats)
-{
-    size_t len = sizeof(*stats);
-    int mib[] = { CTL_VFS, 2, NFS_NFSSTATS };
-
-    if (sysctl(mib, NMIB(mib), stats, &len, NULL, 0) < 0) {
-        return errno;
-    }
-    else {
-        return SIGAR_OK;
-    }
-}
+//static int get_nfsstats(struct nfsstats *stats)
+//{
+//    size_t len = sizeof(*stats);
+//    int mib[] = { CTL_VFS, 2, NFS_NFSSTATS };
+//
+//    if (sysctl(mib, NMIB(mib), stats, &len, NULL, 0) < 0) {
+//        return errno;
+//    }
+//    else {
+//        return SIGAR_OK;
+//    }
+//}
 #endif
 
 #if defined(__OpenBSD__)
@@ -3280,57 +3280,57 @@ int sigar_nfs_server_v2_get(sigar_t *sigar,
     return SIGAR_ENOTIMPL;
 }
 
-int sigar_nfs_client_v3_get(sigar_t *sigar,
-                            sigar_nfs_client_v3_t *nfs)
-{
-#ifdef SIGAR_FREEBSD5_NFSSTAT
-    struct nfsstats stats;
-    size_t size = sizeof(stats);
+//int sigar_nfs_client_v3_get(sigar_t *sigar,
+//                            sigar_nfs_client_v3_t *nfs)
+//{
+//#ifdef SIGAR_FREEBSD5_NFSSTAT
+//    struct nfsstats stats;
+//    size_t size = sizeof(stats);
+//
+//    if (sysctlbyname("vfs.nfs.nfsstats", &stats, &size, NULL, 0) == -1) {
+//        return errno;
+//    }
+//
+//    map_nfs_stats((sigar_nfs_v3_t *)nfs, &stats.rpccnt[0]);
+//#else
+//    int status;
+//    struct nfsstats stats;
+//
+//    if ((status = get_nfsstats(&stats)) != SIGAR_OK) {
+//        return status;
+//    }
+//
+//    map_nfs_stats((sigar_nfs_v3_t *)nfs, &stats.rpccnt[0]);
+//#endif
+//
+//    return SIGAR_OK;
+//}
 
-    if (sysctlbyname("vfs.nfs.nfsstats", &stats, &size, NULL, 0) == -1) {
-        return errno;
-    }
-
-    map_nfs_stats((sigar_nfs_v3_t *)nfs, &stats.rpccnt[0]);
-#else
-    int status;
-    struct nfsstats stats;
-
-    if ((status = get_nfsstats(&stats)) != SIGAR_OK) {
-        return status;
-    }
-
-    map_nfs_stats((sigar_nfs_v3_t *)nfs, &stats.rpccnt[0]);
-#endif
-
-    return SIGAR_OK;
-}
-
-int sigar_nfs_server_v3_get(sigar_t *sigar,
-                            sigar_nfs_server_v3_t *nfs)
-{
-#ifdef SIGAR_FREEBSD5_NFSSTAT
-    struct nfsrvstats stats;
-    size_t size = sizeof(stats);
-
-    if (sysctlbyname("vfs.nfsrv.nfsrvstats", &stats, &size, NULL, 0) == -1) {
-        return errno;
-    }
-
-    map_nfs_stats((sigar_nfs_v3_t *)nfs, &stats.srvrpccnt[0]);
-#else
-    int status;
-    struct nfsstats stats;
-
-    if ((status = get_nfsstats(&stats)) != SIGAR_OK) {
-        return status;
-    }
-
-    map_nfs_stats((sigar_nfs_v3_t *)nfs, &stats.srvrpccnt[0]);
-#endif
-
-    return SIGAR_OK;
-}
+//int sigar_nfs_server_v3_get(sigar_t *sigar,
+//                            sigar_nfs_server_v3_t *nfs)
+//{
+//#ifdef SIGAR_FREEBSD5_NFSSTAT
+//    struct nfsrvstats stats;
+//    size_t size = sizeof(stats);
+//
+//    if (sysctlbyname("vfs.nfsrv.nfsrvstats", &stats, &size, NULL, 0) == -1) {
+//        return errno;
+//    }
+//
+//    map_nfs_stats((sigar_nfs_v3_t *)nfs, &stats.srvrpccnt[0]);
+//#else
+//    int status;
+//    struct nfsstats stats;
+//
+//    if ((status = get_nfsstats(&stats)) != SIGAR_OK) {
+//        return status;
+//    }
+//
+//    map_nfs_stats((sigar_nfs_v3_t *)nfs, &stats.srvrpccnt[0]);
+//#endif
+//
+//    return SIGAR_OK;
+//}
 
 static char *get_hw_type(int type)
 {
