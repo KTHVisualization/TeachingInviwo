@@ -57,7 +57,7 @@ public:
     IntVec2Property texSize_;
 
     // TODO: Declare additional properties
-    // IntProperty properyName;
+    // IntProperty propertyName;
     // TemplateOptionProperty<int> propertyName2;
 
     // Attributes

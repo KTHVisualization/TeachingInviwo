@@ -61,7 +61,7 @@ void Topology::process() {
     }
     auto vol = inData.getData();
 
-    // Retreive data in a form that we can access it
+    // Retrieve data in a form that we can access it
     const VectorField2 vectorField = VectorField2::createFieldFromVolume(vol);
 
     // Add a bounding box to the mesh
@@ -83,7 +83,7 @@ void Topology::process() {
     bboxMesh->addVertices(bboxVertices);
     meshBBoxOut.setData(bboxMesh);
 
-    // Initialize mesh, vertices and index buffers for seperatrices
+    // Initialize mesh, vertices and index buffers for separatrices
     auto mesh = std::make_shared<BasicMesh>();
     std::vector<BasicMesh::Vertex> vertices;
     // Either add all line segments to this index buffer (one large buffer, two consecutive points

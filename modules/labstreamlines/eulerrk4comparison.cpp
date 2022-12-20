@@ -37,7 +37,7 @@ EulerRK4Comparison::EulerRK4Comparison()
           "mouseMoveStart", "Move Start", [this](Event* e) { eventMoveStart(e); },
           MouseButton::Left, MouseState::Press | MouseState::Move)
 // TODO: Initialize additional properties
-// propertyName("propertyIdentifier", "Display Name of the Propery",
+// propertyName("propertyIdentifier", "Display Name of the Property",
 // default value (optional), minimum value (optional), maximum value (optional), increment
 // (optional)); propertyIdentifier cannot have spaces
 {
@@ -77,7 +77,7 @@ void EulerRK4Comparison::process() {
     }
     auto vol = inData.getData();
 
-    // Retreive data in a form that we can access it
+    // Retrieve data in a form that we can access it
     const VectorField2 vectorField = VectorField2::createFieldFromVolume(vol);
     BBoxMin_ = vectorField.getBBoxMin();
     BBoxMax_ = vectorField.getBBoxMax();

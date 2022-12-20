@@ -39,7 +39,7 @@ namespace inviwo {
       * __meshOut__ The output mesh contains points and linesegments for the
       two streamlines computed with different integration schemes and both
       starting at a given start point
-      * __meshBBoxOut__ Mesh with boundling box
+      * __meshBBoxOut__ Mesh with bounding box
 
     ### Properties
       * __propStartPoint__ Location of the start point

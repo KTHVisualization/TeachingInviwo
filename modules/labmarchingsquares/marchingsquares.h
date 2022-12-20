@@ -38,7 +38,7 @@ namespace inviwo {
 
     ### Outports
       * __isolinesmesh__ Mesh with (possibly multiple) iso contours
-      * __gridmesh__ Mesh with boundling box and potentially grid lines
+      * __gridmesh__ Mesh with bounding box and potentially grid lines
 
     ### Properties
       * __propShowGrid__ Display grid lines if true, do not display grid lines if false.

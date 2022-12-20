@@ -187,10 +187,10 @@ void MarchingSquares::process() {
         // The function drawLineSegments creates two vertices at the specified positions,
         // that are placed into the Vertex vector defining our mesh.
         // An index buffer specifies which of those vertices should be grouped into to make up
-        // lines/trianges/quads. Here two vertices make up a line segment.
+        // lines/triangles/quads. Here two vertices make up a line segment.
         auto indexBufferGrid = gridmesh->addIndexBuffer(DrawType::Lines, ConnectivityType::None);
 
-        // Draw a line segment from v1 to v2 with a the given color for the grid
+        // Draw a line segment from v1 to v2 with the given color for the grid
         vec2 v1 = vec2(0.5, 0.5);
         vec2 v2 = vec2(0.7, 0.7);
         drawLineSegment(v1, v2, propGridColor.get(), indexBufferGrid.get(), gridvertices);

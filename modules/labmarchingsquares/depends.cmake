@@ -5,4 +5,4 @@ set(dependencies
     #InviwoOpenGLModule
     #InviwoBaseGLModule
 )
-set(EnableByDefault ON)
+set(EnableByDefault OFF)
