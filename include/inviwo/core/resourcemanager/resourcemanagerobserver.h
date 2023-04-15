@@ -29,6 +29,7 @@
 
 #pragma once
 
+#include <string>
 #include <inviwo/core/common/inviwocoredefine.h>
 #include <inviwo/core/util/observer.h>
 
